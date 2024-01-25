@@ -16,7 +16,7 @@ def fizzBuzz(n):
         return str(n)
 
 
-@app.route('/fizz-buzz-server/run', methods=['GET'])
+@app.route('/run', methods=['GET'])
 def fetchFizzBuzz():
     num = int(request.args.get('num'))
     return fizzBuzz(num)
