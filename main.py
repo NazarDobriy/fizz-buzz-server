@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def fizzBuzz(n):
 @app.route('/run', methods=['GET'])
 def fetchFizzBuzz():
     num = int(request.args.get('num'))
-    return fizzBuzz(num)
+    return jsonify(solution=fizzBuzz(num))
 
 
 if __name__ == "__main__":
